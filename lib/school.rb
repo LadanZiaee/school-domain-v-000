@@ -1,5 +1,5 @@
 class School
-  attr_accessor :roster
+  attr_reader :roster
   def initialize(school)
     @school = school #initializes name of school
     @roster = {} #initializes a roster with empty hash
