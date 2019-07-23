@@ -1,13 +1,9 @@
 class School
-  
+  attr_accessor :roster
   def initialize(school)
     @school = school #initializes name of school
     @roster = {} #initializes a roster with empty hash
   end
-  
-  def roster
-    @roster 
-  end 
   
   def add_student(name, grade)
     @name = name
