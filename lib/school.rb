@@ -1,26 +1,31 @@
 class School
-  attr_accessor :name, :roster
-
-  def initialize(name)
+  
+  def initialize(school)
+    @school = school #initializes name of school
+    @roster = {} #initializes a roster with empty hash
+  end
+  
+  def roster
+    @roster 
+  end 
+  
+  def add_student(name, grade)
     @name = name
-    @roster = {}
-  end
-
-  def add_student(student_name, grade)
-    roster[grade] ||= []
-    roster[grade] << student_name
-  end
-
-  def grade(student_grade)
-    roster[student_grade]
-  end
-
-  # this method should arrange the students in each grade by alphabetical order
-  def sort
-    sorted = {}
-    roster.each do |grade, students|
-      sorted[grade] = students.sort
+    @grade = grade
+    if @roster.include?(grade)==false #doesn't replace  grade when adding a school
+      @roster[grade] = [] #set key to open array to add value to an array in key
     end
-    sorted
+    @roster[grade] << name
   end
+  
+  def grade(num)
+    @roster[num]
+  end
+  
+  def sort 
+    @roster.each do |grade, name|
+      @roster[grade] = name.sort
+    end
+  end
+  
 end
