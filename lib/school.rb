@@ -6,8 +6,7 @@ class School
   end
   
   def add_student(name, grade)
-    @name = name
-    @grade = grade
+   
     if roster.include?(grade)==false #doesn't replace  grade when adding a school
       roster[grade] = [] #set key to open array to add value to an array in key
     end
